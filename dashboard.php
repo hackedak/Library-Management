@@ -9,7 +9,7 @@
     <title>Welcome</title>
 </head>
 <body id="bootstrap-overrides">
-<?php require("navbar.php"); ?>
+<?php require("navbar.html"); ?>
 
 <div class="container">
     <br/>
