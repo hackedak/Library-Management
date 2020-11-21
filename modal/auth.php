@@ -1,8 +1,8 @@
-<?php      
+<?php    
+    session_start();  
     include('dbconfig.php');
     $username = $_POST['username'];  
     $password = $_POST['password'];  
-    session_start();
     if (isset($_POST['username'])){
     //to prevent from mysqli injection  
         $username = stripcslashes($username);  
