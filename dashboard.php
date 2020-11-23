@@ -25,7 +25,7 @@ if (!$_SESSION['username']) {
                                 <div class="card-body border-round row no-gutters align-items-center card-color">
                                     <!--end of col-->
                                     <div class="col">
-                                    <input class="form-control form-control-lg form-control-borderless border-round" type="text" name="title" placeholder="Book Title">
+                                    <input class="form-control form-control-lg form-control-borderless border-round" id="search" type="text" name="search" placeholder="Book Title">
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto space">
@@ -33,10 +33,14 @@ if (!$_SESSION['username']) {
                                     </div>
                                     <!--end of col-->
                                 </div>
-                            </form>
+                            </form>   
                         </div>
                         <!--end of col-->
-                    </div>
+    </div>
+    <div id="display" class="card-body border-round row no-gutters align-items-center card-color">
+
+    </div> 
+
 </div>
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
@@ -85,8 +89,9 @@ server with default setting (user 'root' with no password) */
 // mysqli_close($link);
 ?>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+ <script type="text/javascript" src="modal/script.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
