@@ -21,7 +21,7 @@ if (!$_SESSION['username']) {
     <br/>
 	<div class="row justify-content-center border-round">
                         <div class="col-12 col-md-10 col-lg-8">
-                            <form action="./modal/book_search.php" method="get" class="card card-sm bg-transparent border-0">
+                            <form action="resultPage.php" method="get" class="card card-sm bg-transparent border-0">
                                 <div class="card-body border-round row no-gutters align-items-center card-color">
                                     <!--end of col-->
                                     <div class="col">
@@ -39,7 +39,7 @@ if (!$_SESSION['username']) {
     </div>
     <div id="display" class="card-body border-round row no-gutters align-items-center card-color">
 
-    </div> 
+    </div>
 
 </div>
 <?php
