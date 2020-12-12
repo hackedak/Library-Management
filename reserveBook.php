@@ -5,11 +5,10 @@ if (isset($_GET)) {
     $reserve_book_id = $_GET['reserve-book'];
     $reserve_book_id = mysqli_real_escape_string($con, $reserve_book_id);
     $borrowed_by = $_SESSION['username'];
-    // $issue_date = date('Y/m/d');
-    // echo ($issue_date + strtotime(''));
-
+    $check_book_count = 
+    
     $issued_date = new DateTime();
-    $issued_date->modify('+2 days');
+    $issued_date->modify('+3 days');
     $issued_date = $issued_date->format('Y-m-d');
     $reserve_query = "INSERT INTO books_reserved 
                      (BOOK_ID, REGISTRATION_ID, ISSUE_DATE) 
