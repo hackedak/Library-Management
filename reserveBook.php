@@ -10,6 +10,13 @@ if (isset($_GET)) {
     $count_result = mysqli_query($con, $check_book_count);
     $row = mysqli_fetch_assoc($count_result);
     if ($row['book_count'] == 3) {
+        echo'<script>
+        alert("You already borrowed 3 books...");
+        location="'.$_SESSION['url'].'";
+        </script>';
+        // echo $_SESSION['url'];
+
+    } else {
         $issued_date = new DateTime();
         $issued_date->modify('+3 days');
         $issued_date = $issued_date->format('Y-m-d');
@@ -17,7 +24,8 @@ if (isset($_GET)) {
                         (BOOK_ID, REGISTRATION_ID, ISSUE_DATE) 
                         VALUES('$reserve_book_id', '$borrowed_by', '$issued_date'); 
                         UPDATE books SET available_count = available_count - 1 
-                        WHERE book_id = '$reserve_book_id' AND available_count >0";
+                        WHERE book_id = '$reserve_book_id' AND available_count >0;
+                        UPDATE students SET book_count = book_count + 1 WHERE student = '$borrowed_by'";
 
         if ($con->multi_query($reserve_query)) {
 
@@ -40,10 +48,6 @@ if (isset($_GET)) {
                 break;
             } 
         }   
-
-
-    } else {
-        # code...
     }
     
     
