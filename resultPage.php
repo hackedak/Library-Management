@@ -33,6 +33,7 @@ if (!$_SESSION['username']) {
             <?php
             include('./modal/dbconfig.php');
             if (isset($_GET)) {
+                $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                 $book_name = $_GET['search'];
                 $book_name = mysqli_real_escape_string($con, $book_name);
                 $sql_query = 'select *from books where match(name) against("'.$book_name.'") or match(author) against("'.$book_name.'")';
