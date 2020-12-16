@@ -22,7 +22,7 @@ function fill(Value) {
                 //AJAX type is "Post".
                 type: "POST",
                 //Data will be sent to "ajax.php".
-                url: "modal/ajax.php",
+                url: "../modal/ajax.php",
                 //Data, that will be sent to "ajax.php".
                 data: {
                     //Assigning value of "name" into "search" variable.

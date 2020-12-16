@@ -10,12 +10,12 @@ if (!$_SESSION['username']) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://use.fontawesome.com/db754630e4.js"></script>
     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="/css/dashboard.css" type="text/css">
+     <link rel="stylesheet" href="../public/css/dashboard.css" type="text/css">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Welcome</title>
 </head>
 <body id="bootstrap-overrides">
-<?php require("navbar.html"); ?>
+<?php require("./partials/navbar.html"); ?>
 
 <div class="container">
     <br/>
@@ -25,11 +25,11 @@ if (!$_SESSION['username']) {
                                 <div class="card-body border-round row no-gutters align-items-center card-color">
                                     <!--end of col-->
                                     <div class="col">
-                                    <input class="form-control form-control-lg form-control-borderless border-round" id="search" type="text" name="search" placeholder="Book Title">
+                                    <input class="form-control form-control-lg form-control-borderless border-round" id="search" type="text" name="search" placeholder="Book title or Author's name">
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto space">
-                                        <input type="submit" class="btn btn-light">
+                                       <input type="submit" value="Submit" class="btn btn-light">
                                     </div>
                                     <!--end of col-->
                                 </div>
@@ -37,7 +37,7 @@ if (!$_SESSION['username']) {
                         </div>
                         <!--end of col-->
     </div>
-    <div id="display" class="card-body border-round row no-gutters align-items-center card-color">
+    <div id="display">
 
     </div>
 
@@ -90,7 +90,7 @@ server with default setting (user 'root' with no password) */
 ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
- <script type="text/javascript" src="modal/script.js"></script>
+ <script type="text/javascript" src="script.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>

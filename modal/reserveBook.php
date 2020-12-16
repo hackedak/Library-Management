@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('./modal/dbconfig.php');
+include('dbconfig.php');
 if (isset($_GET)) {
     $reserve_book_id = $_GET['reserve-book'];
     $reserve_book_id = mysqli_real_escape_string($con, $reserve_book_id);
@@ -29,7 +29,10 @@ if (isset($_GET)) {
 
         if ($con->multi_query($reserve_query)) {
 
-            echo "success";
+            echo'<script>
+        alert("Book Reserved");
+        location="'.$_SESSION['url'].'";
+        </script>';
             
         } else {
             $error_code = mysqli_errno($con);

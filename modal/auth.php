@@ -17,7 +17,7 @@
             
         if($count == 1){  
             $_SESSION['username'] = $username;     
-            header("Location: /dashboard.php");
+            header("Location: ../views/dashboard.php");
             exit; 
         }  
         else{  

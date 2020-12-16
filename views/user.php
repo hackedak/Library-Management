@@ -11,12 +11,12 @@ if (!$_SESSION['username']) {
     <script src="https://use.fontawesome.com/db754630e4.js"></script>
     <!-- <script src="reserveBook.js"></script> -->
     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="/css/dashboard.css" type="text/css">
+     <link rel="stylesheet" href="../public/css/dashboard.css" type="text/css">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Welcome</title>
 </head>
 <body id="bootstrap-overrides">
-<?php require("navbar.html"); ?>
+<?php require("./partials/navbar.html"); ?>
 
 <div class="container">
     <table class="table table-hover table-dark">
@@ -29,7 +29,7 @@ if (!$_SESSION['username']) {
         </thead>
         <tbody>
         <?php
-            include('./modal/dbconfig.php');
+            include('../modal/dbconfig.php');
             $user = $_SESSION['username'];
             $books_borrowed = "SELECT books.name, books_reserved.issue_date, books_reserved.return_date FROM books, books_reserved WHERE books_reserved.registration_id = $user AND books.book_id = books_reserved.book_id";  
             $result = mysqli_query($con, $books_borrowed);

@@ -6,12 +6,12 @@ if (isset($_POST['search'])) {
 //Search box value assigning to $Name variable.
    $Name = $_POST['search'];
 //Search query.
-   $Query = "SELECT Name FROM BOOKS WHERE Name LIKE '%$Name%' && AVAILABLE_COUNT>0 LIMIT 5";
+   $Query = "SELECT Name FROM BOOKS WHERE Name LIKE '%$Name%' OR Author LIKE '%$Name%' && AVAILABLE_COUNT>0 LIMIT 5";
 //Query execution
    $ExecQuery = MySQLi_query($con, $Query);
 //Creating unordered list to display result.
    echo '
-<ul>
+<ul class="list-group list-group-flush">
    ';
    //Fetching result from database.
    while ($Result = MySQLi_fetch_array($ExecQuery, MYSQLI_ASSOC)) {

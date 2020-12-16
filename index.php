@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/css/masterstyle.css" type="text/css">
+    <link rel="stylesheet" href="./public/css/masterstyle.css" type="text/css">
     <title>login</title>
   </head>
   <body>
@@ -11,9 +11,8 @@
     <div class="masterbox">
       
 
-       <form class="lform" action="./modal/auth.php" method="post">
+       <form class="lform" action="modal/auth.php" method="post">
         <h1>login</h1>
-
         <div class="input1">
           <p>Registration number</p><br>
           <i class="fas fa-user" aria-hidden="true"></i>

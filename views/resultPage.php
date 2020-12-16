@@ -11,16 +11,16 @@ if (!$_SESSION['username']) {
     <script src="https://use.fontawesome.com/db754630e4.js"></script>
     <!-- <script src="reserveBook.js"></script> -->
     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="/css/dashboard.css" type="text/css">
+     <link rel="stylesheet" href="../public/css/dashboard.css" type="text/css">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Welcome</title>
 </head>
 <body id="bootstrap-overrides">
-<?php require("navbar.html"); ?>
+<?php require("./partials/navbar.html"); ?>
 
 <div class="container">
     <br/>
-    <form action="reserveBook.php" method="get">
+    <form action="../modal/reserveBook.php" method="get">
         <table class="table table-hover table-dark">
             <thead>
                 <tr>
@@ -31,7 +31,7 @@ if (!$_SESSION['username']) {
             </thead>
             <tbody>
             <?php
-            include('./modal/dbconfig.php');
+            include('../modal/dbconfig.php');
             if (isset($_GET)) {
                 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                 $book_name = $_GET['search'];
@@ -104,7 +104,7 @@ server with default setting (user 'root' with no password) */
 ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
- <script type="text/javascript" src="modal/script.js"></script>
+ <!-- <script type="text/javascript" src="modal/script.js"></script> -->
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
