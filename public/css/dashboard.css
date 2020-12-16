@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.493),rgba(0, 0, 0, 0.493)), url('../img/b2.jpg');
     height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
  }    
 .form-control-borderless {
     border: none;
@@ -19,10 +20,6 @@ body {
     margin-left: 10px;
 }
 
-.card-color{
-    background: rgb(104, 93, 85);
-}
-
 .border-round{
     border-radius: 10px;
 }
@@ -34,13 +31,53 @@ body {
     background: none;
 }
 
-#display a {
-    cursor: pointer;
-   color: white;
- }
+#display{
+    margin: 0;
+    padding-left: 40px;
+  }
+  
+ #display li {
+    color: whitesmoke;
+    padding: 5px 0;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.0125em;
+    margin-bottom: 0.25rem;
+    list-style: none;
+    font-family: 'Noto Serif', serif;
+    font-size: 15px;
+    text-align: left;
+    background-color: rgba(58, 58, 58, 0.267);
+    }
+
 
  .search_result{
      background-color: white;
  }
 /************Books Issued Page********************/
 
+/* Result table */
+
+table{
+    font-family: 'Noto Serif', serif;
+    text-transform: uppercase;
+}
+
+#bootstrap-overrides th{
+    background: rgba(46, 46, 46, 0.541);
+    color: whitesmoke;
+    font-size: 20px;
+    pointer-events: none;
+}
+#bootstrap-overrides tr{
+    background: rgba(56, 56, 56, 0.582);
+    color: whitesmoke;
+    font-size: 15px;
+    transition: 0.5s ease;
+}
+#bootstrap-overrides tr:hover{
+    background: rgba(0, 0, 0, 0.637);
+    color: whitesmoke;
+    font-size: 15px;
+}

@@ -29,7 +29,7 @@ if (!$_SESSION['username']) {
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto space">
-                                       <input type="submit" value="Submit" class="btn btn-light">
+                                       <input type="submit" value="Search" class="btn btn-light">
                                     </div>
                                     <!--end of col-->
                                 </div>

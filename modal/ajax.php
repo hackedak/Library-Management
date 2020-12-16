@@ -11,7 +11,7 @@ if (isset($_POST['search'])) {
    $ExecQuery = MySQLi_query($con, $Query);
 //Creating unordered list to display result.
    echo '
-<ul class="list-group list-group-flush">
+<ul">
    ';
    //Fetching result from database.
    while ($Result = MySQLi_fetch_array($ExecQuery, MYSQLI_ASSOC)) {

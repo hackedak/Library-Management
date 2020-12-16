@@ -21,7 +21,7 @@ if (!$_SESSION['username']) {
 <div class="container">
     <br/>
     <form action="../modal/reserveBook.php" method="get">
-        <table class="table table-hover table-dark">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Book</th>
@@ -46,7 +46,8 @@ if (!$_SESSION['username']) {
                     echo "<tr>";
                     echo "<td>". $row['name']."</td>".
                         "<td>". $row['author']."</td>".
-                        "<td><button type='submit' class='btn btn-light' value= '".$row['book_id']."' name='reserve-book'>Submit</button></td>";
+                        "<td><button type='submit' class='btn btn-outline-light' value= '".$row['book_id']."' name='reserve-book'>Reserve</button></td>
+                        </tr>";
                 }
             echo "</form>";
             } else{

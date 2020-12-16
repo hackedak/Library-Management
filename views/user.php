@@ -19,21 +19,21 @@ if (!$_SESSION['username']) {
 <?php require("./partials/navbar.html"); ?>
 
 <div class="container">
-    <table class="table table-hover table-dark">
-        <thead>
-            <tr>
-                <th scope="col">Book</th>
-                <th scope="col">Borrowed On</th>
-                <th scope="col">Due Date</th>
-            </tr>
-        </thead>
-        <tbody>
         <?php
             include('../modal/dbconfig.php');
             $user = $_SESSION['username'];
             $books_borrowed = "SELECT books.name, books_reserved.issue_date, books_reserved.return_date FROM books, books_reserved WHERE books_reserved.registration_id = $user AND books.book_id = books_reserved.book_id";  
             $result = mysqli_query($con, $books_borrowed);
             if(mysqli_num_rows($result) > 0){
+                echo'<table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Book</th>
+                        <th scope="col">Borrowed On</th>
+                        <th scope="col">Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>';
                 // Fetch result rows as an associative array
                 while($rowlist = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     echo "<tr>";
@@ -42,9 +42,13 @@ if (!$_SESSION['username']) {
                           "<td>".$rowlist['return_date']."</td>";
                 }
             echo '</tbody> </table>';            
-            }else {
-                echo "No books borrowed";
-            }        
+            }
+            else
+            echo '<div class="card">
+                    <div class="card-body align-center bg-transparent">
+                    No books reserved/borrowed.
+                    </div>
+                </div>';       
             
         
         

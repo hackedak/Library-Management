@@ -1,0 +1,6 @@
+{
+    "name": "librarion/librarion_darkside",
+    "description": "A web application for managing borrowed books for college students",
+    "type": "project",
+    "require": {}
+}
