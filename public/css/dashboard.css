@@ -4,9 +4,7 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
- }
- 
-    
+ }    
 .form-control-borderless {
     border: none;
 }
@@ -32,7 +30,7 @@ body {
     transition: transform .5s ease;
 }
 #bootstrap-overrides a:hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
     background: none;
 }
 
