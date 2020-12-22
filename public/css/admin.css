@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/* 
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.493),rgba(0, 0, 0, 0.493)), url('../img/b2.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+/* .nav-color{
+    background: rgba(60, 55, 87, 0.904);
+} */
+
+.sidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(rgba(12, 12, 12, 0.432),rgba(148, 148, 148, 0.13)), #303030f5;
+    transition: all 0.5s ease;
+}
+
+.sidebar header{
+    user-select: none;
+    font-size: 20px;
+    text-align: center;
+    line-height: 70px;
+    background: #303030f5;
+    color: whitesmoke;
+}
+.sidebar li{
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    cursor:pointer;
+    border-top: 2px solid  #18181894;
+}
+.sidebar li:hover{
+    transition:ease-in-out 0.5s;
+    background:#404040;
+    
+}
+#check{
+    display: none;
+}
+label #btn-icon,label #btn-cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #282828;
+    border-radius: 50%;
+}
+label #btn-icon{
+    left: 40px;
+    top: 25px;
+    font-size: 25px;
+    color: whitesmoke;
+    padding: 11px 13px;
+    transition: all 0.5s;
+}
+
+label #btn-cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color:whitesmoke;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+#check:checked ~ label #btn-icon{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #btn-cancel{
+    left: 195px;
+}
+
+section{
+    background: linear-gradient(rgba(0, 0, 0, 0.164),rgba(0, 0, 0, 0.329)), url('../img/b2.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all 0.5s;
+}
+
+#check:checked ~ section{
+    margin-left: 250px;
+}
