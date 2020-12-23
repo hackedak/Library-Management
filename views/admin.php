@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if (!$_SESSION['username']) {
+    header("Location: http://localhost");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,56 +71,33 @@
 
 <!-- Return Book  -->
     
-<!-- <form action="../modal/returnBook.php" class="form-display" method="post">
-<table class="flex-container" border="0px">
-
-    <tr>
-    
-        <th>
-            <label for="bookId">Book Id 1</label>
-        </th>
-
-        <th>
-            <input type="text" name="bookId" placeholder="BookId" />
-        </th>
-
-    </tr>
-
-    <tr>
-    
-        <th>
-            <label for="bookName">Name of Book</label>
-        </th>
-
-        <th>
-            <input type="text" name="bookName" placeholder="Book Name" />
-        </th>
-
-    </tr>
-
-    <tr>
-  
-        <th>
-            <label for="tcount">Count</label>
-        </th>
-
-        <th>
-            <input type="number" name="tcount" placeholder="Book Count" />
-        </th>
-    </tr>
-
-    <tr>
-  
-        <th>
-        </th>
-
-        <th>
-            <button type="submit" id="btn-Book">Add Book</button>
-        </th>
-    </tr>
-
-</table>
-</form> -->
+<form action="returnBook.php" class="form-display1" method="GET">
+        <table class="flex-container" border="0px">
+        
+            <tr>
+            
+                <th>
+                </th>
+        
+                <th>
+                    <input type="text" name="userId" placeholder="user Id" />
+                </th>
+        
+            </tr>
+        
+            
+            <tr>
+          
+                <th>
+                </th>
+        
+                <th>
+                    <button type="submit" id="btn-Book">Search Books to return</button>
+                </th>
+            </tr>
+        
+        </table>
+    </form>
 
 <!-- /Return Book  -->
 

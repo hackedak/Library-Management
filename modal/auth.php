@@ -15,9 +15,15 @@
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
         if($count == 1){  
-            $_SESSION['username'] = $username;     
-            header("Location: ../views/dashboard.php");
-            exit; 
+            $_SESSION['username'] = $username;
+            if ($username == '1100490') {
+                header("Location: ../views/admin.php");
+                exit;
+            }
+            else {
+                header("Location: ../views/dashboard.php");
+                exit;
+            }      
         }  
         else{  
             echo "<script>alert('Login credentials are incorrect...!')</script>";

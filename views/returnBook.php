@@ -34,7 +34,7 @@
 
 <section>
     <br/>
-    <form action="../modal/issueBook.php" method="POST">
+    <form action="../modal/returnBook.php" method="POST">
     <div class="table-div">
             <?php
             session_start();
@@ -44,14 +44,14 @@
                     $username = $_GET['userId'];  
                     $username = stripcslashes($username);   
                     $username = mysqli_real_escape_string($con, $username); 
-                    $sql = "select *from books_reserved  where registration_id = '$username' and return_date = '0000-00-00'";  
+                    $sql = "select *from books_reserved  where registration_id = '$username' and return_date <> '0000-00-00'";  
                     $result = mysqli_query($con, $sql);   
                     if(mysqli_num_rows($result) > 0){
                         echo '<table class="table-issuebook">
                         <thead>
                             <tr>
                                 <th scope="col">Book</th>
-                                <th scope="col">Issue</th>
+                                <th scope="col">Return</th>
                             </tr>
                         </thead>
                         <tbody>';
@@ -59,12 +59,12 @@
                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     echo "<tr>";
                     echo "<td>". $row['book_id']."</td>".
-                        "<td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='issue-book'>Issue Book</button></td>
+                        "<td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='return-book'>Return Book</button></td>
                         </tr>";
                 }
             echo "</table> </div> </form>";
             $_SESSION['studentname'] = $_GET['userId'];
-            $_SESSION['url-issue'] = $_SERVER['REQUEST_URI'];
+            $_SESSION['url-return'] = $_SERVER['REQUEST_URI'];
             }
              else{
                 echo "<h1 style='background: rgba(255, 255, 255, 0.849);
