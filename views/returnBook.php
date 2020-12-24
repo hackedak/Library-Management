@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if (!$_SESSION['username']) {
+    header("Location: http://localhost");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +27,8 @@
 <div class="sidebar">
     <header>Admin Panel</header>
     <ul>
-        <li id="add-book" onclick="returnBook();"><a href="#">Issue Book</a></li>
-        <li><a id="return-book" onclick="returnBook();" href="#">Return Book</a></li>
+        <li id="add-book"><a href="admin.php">Issue Book</a></li>
+        <li><a id="return-book" href="admin.php">Return Book</a></li>
         <li><a href="./signOut.php">Log Out</a></li>
     </ul>
 </div>
@@ -33,11 +38,13 @@
 
 
 <section>
+<div class="image-container">
+        <img src="../public/img/logo.png" alt="" srcset="">
+    </div>
     <br/>
     <form action="../modal/returnBook.php" method="POST">
     <div class="table-div">
             <?php
-            session_start();
             include('../modal/dbconfig.php');
             if (isset($_GET['userId'])){
                 //to prevent from mysqli injection  
@@ -51,6 +58,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">Book</th>
+                                <th scope="col">Issued Date</th>
+                                <th scope="col">Due Date</th>
+                                <th scope="col">Fine</th>
                                 <th scope="col">Return</th>
                             </tr>
                         </thead>
@@ -59,8 +69,24 @@
                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     echo "<tr>";
                     echo "<td>". $row['book_id']."</td>".
-                        "<td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='return-book'>Return Book</button></td>
-                        </tr>";
+                         "<td>". $row['issue_date']."</td>".
+                         "<td>". $row['return_date']."</td>";
+
+                        // 888888888888888888888888888
+
+                        $currentdate = time();
+                        $duedate = strtotime($row['return_date']);
+                        $duedate = $duedate/(60*60*24);
+                        $currentdate = $currentdate/(60*60*24);
+                        $diff = floor(($currentdate - $duedate));
+                        if ($diff<=0) {
+                            echo "<td>No fine</td>".
+                            "<td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='return-book'>Return Book</button></td></tr>";
+                        } else {
+                            echo "<td> Rs.".($diff/2)."</td>.
+                            <td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='return-book'>Return Book</button></td></tr>";
+                        }
+                        // 8888888888888888888888888888888
                 }
             echo "</table> </div> </form>";
             $_SESSION['studentname'] = $_GET['userId'];

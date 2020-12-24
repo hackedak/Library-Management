@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if (!$_SESSION['username']) {
+    header("Location: http://localhost");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +27,8 @@
 <div class="sidebar">
     <header>Admin Panel</header>
     <ul>
-        <li id="add-book" onclick="returnBook();"><a href="#">Issue Book</a></li>
-        <li><a id="return-book" onclick="returnBook();" href="#">Return Book</a></li>
+        <li><a href="admin.php">Issue Book</a></li>
+        <li><a href="admin.php">Return Book</a></li>
         <li><a href="./signOut.php">Log Out</a></li>
     </ul>
 </div>
@@ -33,11 +38,13 @@
 
 
 <section>
+<div class="image-container">
+        <img src="../public/img/logo.png" alt="" srcset="">
+    </div>
     <br/>
     <form action="../modal/issueBook.php" method="POST">
     <div class="table-div">
             <?php
-            session_start();
             include('../modal/dbconfig.php');
             if (isset($_GET['userId'])){
                 //to prevent from mysqli injection  
