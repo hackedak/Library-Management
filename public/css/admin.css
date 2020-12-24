@@ -18,18 +18,18 @@
     user-select: none;
     font-size: 20px;
     text-align: center;
-    line-height: 70px;
+    line-height: 100px;
     background: #303030f5;
     color: whitesmoke;
 }
 .sidebar li a{
   color: whitesmoke;
+  font-size: 16px;
+  display: block;
 }
 .sidebar li{
-    font-size: 16px;
     text-align: center;
-    line-height: 40px;
-    display: block;
+    line-height: 80px;
     cursor:pointer;
     border-top: 2px solid  #18181894;
 }
@@ -92,6 +92,20 @@ section{
 #check:checked ~ section{
     margin-left: 250px;
 }
+
+/* logo CUSAT  */
+
+.image-container img{
+  float: right;
+  margin: 20px 20px 0 0;
+  width: 50px;
+  height: 55px;
+}
+
+/* ***********  */
+
+
+
 
 /* Form box  */
 
@@ -169,7 +183,7 @@ form input{
 
   /* submit button add book  */
 
-  #btn-Book {
+  .btn-Book {
     font-family: arial;
     color: #FFFFFF !important;
     font-size: 20px;
@@ -180,7 +194,7 @@ form input{
     border: 0px solid #3866A3;
     background: #2A2661;
   }
-  #btn-Book:hover {
+  .btn-Book:hover {
     color: #030A12 !important;
     background: #8B87CF;
   }
