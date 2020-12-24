@@ -79,7 +79,7 @@ label #btn-cancel{
 }
 
 section{
-    background: linear-gradient(rgba(0, 0, 0, 0.164),rgba(0, 0, 0, 0.329)), url('../img/b2.jpg') no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.644),rgba(0, 0, 0, 0.644)), url('../img/b2-compressed.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     -webkit-background-size: cover;

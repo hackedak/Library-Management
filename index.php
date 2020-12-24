@@ -16,7 +16,7 @@
         <div class="input1">
           <p>Registration number</p><br>
           <i class="fas fa-user" aria-hidden="true"></i>
-          <input type="text" name="username" placeholder="Enter Username" required>
+          <input type="text" name="username" placeholder="Enter Registration Id" required>
         </div>
 
 
