@@ -1,9 +1,9 @@
-<?php
+<!-- <?php
 session_start();
 if (!$_SESSION['username']) {
     header("Location: http://localhost");
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,8 @@ if (!$_SESSION['username']) {
     <!-- Bootstrap CSS -->
      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
      <link rel="stylesheet" href="../public/css/admin.css" type="text/css">
+     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
      <script src="../public/js/adminControl.js"></script>
     <title>Admin</title>
 </head>
@@ -26,10 +28,12 @@ if (!$_SESSION['username']) {
 </label>
 <div class="sidebar">
     <header>Admin Panel</header>
+    <ul class="control-panel">
+        <li><a href="#add-book">Issue Book</a></li>
+        <li><a href="#return-book">Return Book</a></li>
+    </ul>
     <ul>
-        <li id="add-book" onclick="returnBook();"><a href="#">Issue Book</a></li>
-        <li><a id="return-book" onclick="returnBook();" href="#">Return Book</a></li>
-        <li><a href="./signOut.php">Log Out</a></li>
+    <li><a href="./signOut.php">Log Out</a></li>
     </ul>
 </div>
 
@@ -37,10 +41,12 @@ if (!$_SESSION['username']) {
 
 
 <section>
-
+    <div class="image-container">
+        <img src="../public/img/logo.png" alt="" srcset="">
+    </div>
 
 <!-- Issue Book  -->
-    <form action="issueBook.php" class="form-display1" method="GET">
+    <form action="issueBook.php" id="add-book" class="tab-content" method="GET">
         <table class="flex-container" border="0px">
         
             <tr>
@@ -61,7 +67,7 @@ if (!$_SESSION['username']) {
                 </th>
         
                 <th>
-                    <button type="submit" id="btn-Book">Search Books</button>
+                    <button type="submit" class="btn-Book">Search Books</button>
                 </th>
             </tr>
         
@@ -71,7 +77,7 @@ if (!$_SESSION['username']) {
 
 <!-- Return Book  -->
     
-<form action="returnBook.php" class="form-display1" method="GET">
+<form action="returnBook.php" id="return-book" class="tab-content" method="GET">
         <table class="flex-container" border="0px">
         
             <tr>
@@ -92,7 +98,7 @@ if (!$_SESSION['username']) {
                 </th>
         
                 <th>
-                    <button type="submit" id="btn-Book">Search Books to return</button>
+                    <button type="submit" class="btn-Book">Search Books to return</button>
                 </th>
             </tr>
         
@@ -191,8 +197,7 @@ if (!$_SESSION['username']) {
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
- <script type="text/javascript" src="script.js"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
