@@ -19,10 +19,11 @@ if (!$_SESSION['username']) {
 <?php require("./partials/navbar.html"); ?>
 
 <div class="container">
+<form action="../modal/unreserve.php" method="POST">
         <?php
             include('../modal/dbconfig.php');
             $user = $_SESSION['username'];
-            $books_borrowed = "SELECT books.name, books_reserved.issue_date, books_reserved.return_date FROM books, books_reserved WHERE books_reserved.registration_id = $user AND books.book_id = books_reserved.book_id";  
+            $books_borrowed = "SELECT books.name, books_reserved.book_id, books_reserved.issue_date, books_reserved.return_date FROM books, books_reserved WHERE books_reserved.registration_id = $user AND books.book_id = books_reserved.book_id";  
             $result = mysqli_query($con, $books_borrowed);
             if(mysqli_num_rows($result) > 0){
                 echo'<table class="table table-hover">
@@ -31,15 +32,22 @@ if (!$_SESSION['username']) {
                         <th scope="col">Book</th>
                         <th scope="col">Borrowed On</th>
                         <th scope="col">Due Date</th>
+                        <th scope="col">Unreserve</th>
                     </tr>
                 </thead>
                 <tbody>';
+                $_SESSION['url-return'] = $_SERVER['REQUEST_URI'];
                 // Fetch result rows as an associative array
                 while($rowlist = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     echo "<tr>";
                     echo "<td>".$rowlist['name']."</td>".
                           "<td>".$rowlist['issue_date']."</td>".
                           "<td>".$rowlist['return_date']."</td>";
+                          if ($rowlist['return_date'] == '0000-00-00') {
+
+                            echo "<td><button type='submit' class='btn btn-outline-light' value= '".$rowlist['book_id']."' name='unreserve-book'>Un-reserve</button></td> </tr>";
+
+                          }
                 }
             echo '</tbody> </table>';            
             }
@@ -53,7 +61,7 @@ if (!$_SESSION['username']) {
         
         
         ?>    
-    </table>
+</form>
 </div>
 
 </body>
