@@ -16,7 +16,7 @@ if (!$_SESSION['username']) {
     <title>Welcome</title>
 </head>
 <body id="bootstrap-overrides">
-<?php require("./partials/navbar.html"); ?>
+<?php require("./partials/navbar.php"); ?>
 
 <div class="container">
     <br/>

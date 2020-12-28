@@ -16,7 +16,7 @@ if (!$_SESSION['username']) {
     <title>Welcome</title>
 </head>
 <body id="bootstrap-overrides">
-<?php require("./partials/navbar.html"); ?>
+<?php require("./partials/navbar.php"); ?>
 
 <div class="container">
 <form action="../modal/unreserve.php" method="POST">
@@ -52,8 +52,8 @@ if (!$_SESSION['username']) {
             echo '</tbody> </table>';            
             }
             else
-            echo '<div class="card">
-                    <div class="card-body align-center bg-transparent">
+            echo '<div class="card w-50 p-3 my-0 mx-auto bg-secondary text-light">
+                    <div class="card-body align-center text-center">
                     No books reserved/borrowed.
                     </div>
                 </div>';       

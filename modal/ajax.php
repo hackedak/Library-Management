@@ -1,3 +1,6 @@
+<head>
+   <link rel="stylesheet" href="../public/css/ajax.css">
+</head>
 <?php
 //Including Database configuration file.
 include "dbconfig.php";
@@ -11,7 +14,7 @@ if (isset($_POST['search'])) {
    $ExecQuery = MySQLi_query($con, $Query);
 //Creating unordered list to display result.
    echo '
-<ul">
+<ul>
    ';
    //Fetching result from database.
    while ($Result = MySQLi_fetch_array($ExecQuery, MYSQLI_ASSOC)) {

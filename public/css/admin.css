@@ -13,7 +13,7 @@
     left: -250px;
     width: 250px;
     height: 100%;
-    background: linear-gradient(rgba(12, 12, 12, 0.432),rgba(148, 148, 148, 0.13)), #303030f5;
+    background: linear-gradient(rgba(12, 12, 12, 0.671),rgba(0, 0, 0, 0.473)), #303030f5;
     transition: all 0.5s ease;
 }
 
@@ -82,7 +82,7 @@ label #btn-cancel{
 }
 
 section{
-    background: linear-gradient(rgba(0, 0, 0, 0.644),rgba(0, 0, 0, 0.644)), url('../img/b2-compressed.jpg') no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.74),rgba(0, 0, 0, 0.74)), url('../img/b2-compressed.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     -webkit-background-size: cover;
@@ -247,3 +247,7 @@ form input{
   }
 
   /* *****************************  */
+
+  #display{
+    padding-top: 20px;
+  }

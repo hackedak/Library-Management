@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $('.sidebar .control-panel li:first').addClass('active');
     $('.tab-content:not(:first)').hide();

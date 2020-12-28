@@ -11,7 +11,7 @@ if (isset($_POST)) {
     if ($con->multi_query($unreserve_query)) {
 
         echo'<script>
-                alert("Book returned");
+                alert("Reservation cancelled");
                 location="'.$_SESSION['url-return'].'";
             </script>';
         

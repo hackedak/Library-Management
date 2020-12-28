@@ -17,6 +17,7 @@
         if($count == 1){
             include('bookreservecheck.php');
             $_SESSION['username'] = $username;
+            $_SESSION['student_name'] = $row['student'];
             if ($username == '1100490') {
                 header("Location: ../views/admin.php");
                 exit;
