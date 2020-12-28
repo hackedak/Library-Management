@@ -2,7 +2,7 @@
 session_start();
 include('dbconfig.php');
 if (isset($_POST)) {
-    $return_book_id = $_POST['return-book'];
+    $return_book_id = $_POST['returnbook'];
     $return_book_id = mysqli_real_escape_string($con, $return_book_id);
     $borrowed_by = $_SESSION['studentname'];
 
@@ -18,14 +18,8 @@ if (isset($_POST)) {
 
     if ($con->multi_query($return_query)) {
 
-        echo '<script>
-                alert("Book returned");
-                location="' . $_SESSION['url-return'] . '";
-            </script>';
+        echo "Book returned";
     } else {
-        echo '<script>
-                alert("Ops!...Some error occured");
-                location="views/admin.php";
-              </script>';
+        echo "Ops!...Some error occured";
     }
 }
