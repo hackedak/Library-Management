@@ -10,28 +10,16 @@ if (isset($_POST)) {
                         UPDATE students SET book_count = book_count - 1 WHERE student = '$borrowed_by'";
     if ($con->multi_query($unreserve_query)) {
 
-        echo'<script>
+        echo '<script>
                 alert("Reservation cancelled");
-                location="'.$_SESSION['url-return'].'";
+                location="' . $_SESSION['url-return'] . '";
             </script>';
-        
     } else {
-        $error_code = mysqli_errno($con);
-        switch ($error_code) {
-        case 2002:
-            echo 'connection error';
-            break;
-        case 1062:
-            echo 'duplicate entry';
-            break;
-        case 1064:
-            echo 'query syntax error';
-            break;    
-        default:
-            echo mysqli_error($con);
-            break;
-        } 
-    }     
+        echo '<script>
+        alert("Ops!...Some error occured");
+        location="views/admin.php";
+        </script>';
+    }
 
-// echo ($_POST['unreserve-book'].$_SESSION['username']);
-}    
+    // echo ($_POST['unreserve-book'].$_SESSION['username']);
+}
