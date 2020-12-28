@@ -8,6 +8,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .sidebar{
     position: fixed;
     left: -250px;
@@ -107,9 +108,30 @@ section{
 
 /* ***********  */
 
+.image-container-flex{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
 
+.logo-cusat{
+  width: 50px;
+  height: 58px;
+  padding: 20px 0 0 20px;
+}
 
+.image-container-flex .fa{
+margin: 20px;
+background: rgb(75, 75, 75);
+border-radius: 50%;
+padding: 6px;
+color: rgb(51, 51, 51);
+box-shadow:  20px 20px 60px rgb(73, 73, 73),
+             -20px -20px 60px rgb(54, 54, 54);
+}
+
+/* ******** */
 /* Form box  */
 
 form{
@@ -251,3 +273,4 @@ form input{
   #display{
     padding-top: 20px;
   }
+

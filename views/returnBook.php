@@ -17,31 +17,14 @@ if (!$_SESSION['username']) {
     <title>Admin</title>
 </head>
 <body id="bootstrap-overrides">
-
-<!-- sidebar  -->
-<input type="checkbox" id="check">
-<label for="check">
-<i class="fas fa-bars" id="btn-icon"></i>
-<i class="fas fa-times" id="btn-cancel"></i>
-</label>
-<div class="sidebar">
-    <header>Admin Panel</header>
-    <ul>
-        <li id="add-book"><a href="admin.php">Issue Book</a></li>
-        <li><a id="return-book" href="admin.php">Return Book</a></li>
-        <li><a href="./signOut.php">Log Out</a></li>
-    </ul>
+<section>
+<div class="image-container-flex">
+    
+    <img src="../public/img/logo.png" class="logo-cusat" alt="" srcset="">
+    <a href="admin.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
 </div>
 
-<!-- sidebar end  -->
-
-
-
-<section>
-<div class="image-container">
-        <img src="../public/img/logo.png" alt="" srcset="">
-    </div>
-    <br/>
+<br/>
     <form action="../modal/returnBook.php" method="POST">
     <div class="table-div">
             <?php

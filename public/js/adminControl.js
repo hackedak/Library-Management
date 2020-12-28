@@ -11,3 +11,8 @@ $(document).ready(function () {
         $(content).siblings('.tab-content').hide();
     });
 });
+
+const returnBtn =  document.querySelector('btn-icon');
+returnBtn.addEventListener('click', ()=>{
+    window.location.href = 'www.google.com';
+})
