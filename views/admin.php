@@ -1,9 +1,9 @@
-<!-- <?php
+<?php
 session_start();
 if (!$_SESSION['username']) {
     header("Location: http://localhost");
 }
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +79,7 @@ if (!$_SESSION['username']) {
 <!-- Issue book offline  -->
 
 
-<form action="../modal/issueBookOffline.php" id="issue-book-offline" class="tab-content" method="POST">
+<div id="issue-book-offline" class="tab-content issueBookOffline-div">
         <table class="flex-container" border="0px">
         
             <tr>
@@ -111,13 +111,12 @@ if (!$_SESSION['username']) {
                 </th>
         
                 <th>
-                    <button type="submit" class="btn-Book">Issue Book</button>
+                    <button type="submit" class="btn-Book issue-book-offline">Issue Book</button>
                 </th>
             </tr>
         
         </table>
-        <?php $_SESSION['url-issue'] = $_SERVER['REQUEST_URI']; ?>
-    </form>
+</div>
 
 
 <!-- / Issue book offline  -->
@@ -158,7 +157,7 @@ if (!$_SESSION['username']) {
 <!-- /Return Book  -->
 
 <!-- Add Book  -->
-<form action="../modal/addBook.php" id="add-book" class="tab-content" method="POST">
+<div id="add-book" class="tab-content add-Book-div">
         <table class="flex-container" border="0px">
         
             <tr>
@@ -211,13 +210,13 @@ if (!$_SESSION['username']) {
                 </th>
         
                 <th>
-                    <button type="submit" class="btn-Book">Add Book</button>
+                    <button type="submit" class="btn-Book add-book">Add Book</button>
                 </th>
             </tr>
 
         
         </table>
-    </form>
+</div>
 <!-- / Issue book  -->
 
 
@@ -238,7 +237,8 @@ if (!$_SESSION['username']) {
 
 
 
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../public/js/script.js"></script>
+<script type="text/javascript" src="../public/js/admin.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
