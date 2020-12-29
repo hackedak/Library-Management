@@ -14,5 +14,5 @@ $(document).ready(function () {
 
 const returnBtn =  document.querySelector('btn-icon');
 returnBtn.addEventListener('click', ()=>{
-    window.location.href = 'www.google.com';
+    window.location.href = '../views/admin.php';
 })
