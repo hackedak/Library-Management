@@ -19,31 +19,20 @@ if (isset($_POST)) {
 
     if ($con->multi_query($issue_query)) {
 
-        echo '<script>
-                alert("Book Issued");
-                location="' . $_SESSION['url-issue'] . '";
-              </script>';
+        echo "Book Issued";
+        exit();
     } else {
         $error_code = mysqli_errno($con);
         switch ($error_code) {
             case 2002:
-                echo '<script>
-                alert("Connection Error");
-                location="views/admin.php";
-                </script>';
-                break;
+                echo "Connection Error";
+                exit();
             case 1062:
-                echo '<script>
-                alert("Already Issued");
-                location="views/admin.php";
-                </script>';
-                break;
+                echo "Already Issued";
+                exit();
             default:
-                echo '<script>
-                alert("Ops!...Some error occured");
-                location="views/admin.php";
-                </script>';
-                break;
+                echo "Ops!...Some error occured";
+                exit();
         }
     }
 }
