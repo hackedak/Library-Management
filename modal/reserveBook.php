@@ -10,7 +10,7 @@ if (isset($_POST)) {
     $count_result = mysqli_query($con, $check_book_count);
     $row = mysqli_fetch_assoc($count_result);
     if ($row['book_count'] == 3) {
-        echo "More than 3 books";
+        echo "You have have more than 3 books";
         exit; 
     } else {
         $redirect_url = $_SESSION['url'];
