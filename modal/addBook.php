@@ -14,31 +14,20 @@ if (isset($_POST)) {
 
     $result = mysqli_query($con, $add_query);
     if ($result) {
-        echo '<script>
-        alert("Book added");
-        location="views/admin.php";
-        </script>';
+        echo "Book added";
+        exit();
     } else {
         $error_code = mysqli_errno($con);
         switch ($error_code) {
             case 2002:
-                echo '<script>
-                        alert("Connection Error");
-                        location="views/admin.php";
-                        </script>';
-                break;
+                echo "Connection Error";
+                exit();
             case 1062:
-                echo '<script>
-                        alert("Already Booked");
-                        location="views/admin.php";
-                        </script>';
-                break;
+                echo "Already added";
+                exit();
             default:
-                echo '<script>
-                        alert("Ops!...Some error occured");
-                        location="views/admin.php";
-                        </script>';
-                break;
+                echo "Ops!...Some error occured";
+                exit();
         }
     }
 }
