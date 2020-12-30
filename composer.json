@@ -1,6 +1,14 @@
 {
-    "name": "librarion/librarion_darkside",
-    "description": "A web application for managing borrowed books for college students",
+    "name": "ars/librarion",
+    "description": "It's a web application made so that college students can easily reserve a book from library so that they can borrow it later(within 2 days) according to their comfort.",
     "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hackedak",
+            "email": "s.athulkrishnan100@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {}
 }
