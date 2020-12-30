@@ -13,7 +13,7 @@
 * Database: MySQL
 
 ## Screenshots
-![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-dashboard.PNG)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-dashboard.png)
 ![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-dashboard-2.png)
 ![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-issuebook.png)
 ![Screenshot](https://github.com/hackedak/Library-Management/blob/main/screenshot-user-bookDetails.png)
