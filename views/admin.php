@@ -1,18 +1,18 @@
 <?php
 session_start();
-if (!$_SESSION['username']) {
+if (!$_SESSION['admin']) {
     header("Location: http://localhost");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/f71f402dff.js" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="../public/css/admin.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/admin.css" type="text/css">
     <script src="../public/js/node_modules/jquery/dist/jquery.js"></script>
-     <script src="../public/js/adminControl.js"></script>
+    <script src="../public/js/adminControl.js"></script>
     <title>Admin</title>
 </head>
 <body id="bootstrap-overrides">
@@ -41,7 +41,7 @@ if (!$_SESSION['username']) {
 
 <section>
     <div class="image-container">
-        <img src="../public/img/logo.png" alt="" srcset="">
+        <img src="../public/img/logo.png" alt="logo">
     </div>
 
 
@@ -52,8 +52,7 @@ if (!$_SESSION['username']) {
         
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="userId" placeholder="user Id" required/>
@@ -64,8 +63,7 @@ if (!$_SESSION['username']) {
             
             <tr>
           
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <button type="submit" class="btn-Book">Search Books</button>
@@ -79,13 +77,12 @@ if (!$_SESSION['username']) {
 <!-- Issue book offline  -->
 
 
-<div id="issue-book-offline" class="tab-content issueBookOffline-div">
+    <div id="issue-book-offline" class="tab-content issueBookOffline-div">
         <table class="flex-container" border="0px">
         
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="userId" placeholder="user Id" required />
@@ -95,8 +92,7 @@ if (!$_SESSION['username']) {
 
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="bookId" placeholder="Book Id" required/>
@@ -116,7 +112,7 @@ if (!$_SESSION['username']) {
             </tr>
         
         </table>
-</div>
+    </div>
 
 
 <!-- / Issue book offline  -->
@@ -126,13 +122,12 @@ if (!$_SESSION['username']) {
 
 <!-- Return Book  -->
     
-<form action="returnBook.php" id="return-book" class="tab-content" method="GET">
+    <form action="returnBook.php" id="return-book" class="tab-content" method="GET">
         <table class="flex-container" border="0px">
         
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="userId" placeholder="user Id" required/>
@@ -143,8 +138,7 @@ if (!$_SESSION['username']) {
             
             <tr>
           
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <button type="submit" class="btn-Book">Search Books to return</button>
@@ -157,13 +151,12 @@ if (!$_SESSION['username']) {
 <!-- /Return Book  -->
 
 <!-- Add Book  -->
-<div id="add-book" class="tab-content add-Book-div">
+    <div id="add-book" class="tab-content add-Book-div">
         <table class="flex-container" border="0px">
         
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="bookId" placeholder="Book Id" required/>
@@ -173,8 +166,7 @@ if (!$_SESSION['username']) {
         
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="bookname" placeholder="Book Name" required/>
@@ -184,8 +176,7 @@ if (!$_SESSION['username']) {
 
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="text" name="authorname" placeholder="Author name" required/>
@@ -195,8 +186,7 @@ if (!$_SESSION['username']) {
 
             <tr>
             
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <input type="number" name="tcount" placeholder="No of copies" required/>
@@ -206,8 +196,7 @@ if (!$_SESSION['username']) {
             
             <tr>
           
-                <th>
-                </th>
+                <th></th>
         
                 <th>
                     <button type="submit" class="btn-Book add-book">Add Book</button>
@@ -216,25 +205,9 @@ if (!$_SESSION['username']) {
 
         
         </table>
-</div>
+    </div>
 <!-- / Issue book  -->
-
-
-
 </section>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script type="text/javascript" src="../public/js/script.js"></script>

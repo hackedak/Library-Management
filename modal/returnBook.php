@@ -23,3 +23,4 @@ if (isset($_POST)) {
         echo "Ops!...Some error occured";
     }
 }
+mysqli_close($con);

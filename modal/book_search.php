@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!$_SESSION['username']) {
+    header("Location: http://localhost");
+}
 include('dbconfig.php');
 
 if (isset($_GET)) {
@@ -16,3 +20,4 @@ if (isset($_GET)) {
         echo "<p>No matches found</p>";
     }
 }
+mysqli_close($con);

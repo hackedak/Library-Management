@@ -59,3 +59,4 @@ if (isset($_POST)) {
             exit();
     }
 }
+mysqli_close($con);

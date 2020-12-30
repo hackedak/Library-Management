@@ -35,7 +35,6 @@ if (!$_SESSION['username']) {
                     </tr>
                 </thead>
                 <tbody>';
-                $_SESSION['url-return'] = $_SERVER['REQUEST_URI'];
                 // Fetch result rows as an associative array
                 while($rowlist = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     echo "<tr>";
@@ -50,15 +49,15 @@ if (!$_SESSION['username']) {
                 }
             echo '</tbody> </table>';            
             }
-            else
-            echo '<div class="card w-50 p-3 my-0 mx-auto bg-secondary text-light">
-                    <div class="card-body align-center text-center">
-                    No books reserved/borrowed.
-                    </div>
-                </div>';       
-            
+            else{
+                    echo '<div class="card w-50 p-3 my-0 mx-auto bg-secondary text-light">
+                            <div class="card-body align-center text-center">
+                            No books reserved/borrowed.
+                            </div>
+                        </div>';       
+            }
         
-        
+            mysqli_close($con);
         ?>    
 </div>
 

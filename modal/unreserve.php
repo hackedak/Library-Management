@@ -15,6 +15,5 @@ if (isset($_POST)) {
     } else {
         echo "Ops!...Some error occured";
     }
-
-    // echo ($_POST['unreserve-book'].$_SESSION['username']);
 }
+mysqli_close($con);

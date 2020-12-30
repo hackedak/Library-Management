@@ -29,3 +29,4 @@ if (isset($_POST)) {
         }
     }
 }
+mysqli_close($con);

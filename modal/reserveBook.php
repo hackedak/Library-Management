@@ -11,9 +11,8 @@ if (isset($_POST)) {
     $row = mysqli_fetch_assoc($count_result);
     if ($row['book_count'] == 3) {
         echo "You have have more than 3 books";
-        exit; 
+        exit(); 
     } else {
-        $redirect_url = $_SESSION['url'];
         $issued_date = new DateTime();
         $issued_date->modify('+3 days');
         $issued_date = $issued_date->format('Y-m-d');
@@ -26,9 +25,8 @@ if (isset($_POST)) {
 
         if ($con->multi_query($reserve_query)) {
 
-            // header("refresh:2;url = $redirect_url");
             echo "Reserved";
-            exit; 
+            exit();
         }
        
         else {
@@ -36,14 +34,15 @@ if (isset($_POST)) {
             switch ($error_code) {
                 case 2002:
                     echo "Connection Error";
-                    exit; 
+                    exit(); 
                 case 1062:
                     echo "Already Booked";
-                    exit; 
+                    exit(); 
                 default:
                     echo "Ops!...Some error occured";
-                    exit; 
+                    exit(); 
             }
         }
     }
 }
+mysqli_close($con);

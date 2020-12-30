@@ -7,13 +7,9 @@ for (var i = 0; i < allButtons.length; i++) {
     e.preventDefault();
     const btnValue = $(this).val();
     $.ajax({
-        //AJAX type is "Post".
         type: "POST",
-        //Data will be sent to "ajax.php".
         url: "../modal/issueBook.php",
-        //Data, that will be sent to "ajax.php".
         data: {
-            //Assigning value of "name" into "search" variable.
             issuebook: btnValue
         },
         //If result found, this funtion will be called.
@@ -21,7 +17,6 @@ for (var i = 0; i < allButtons.length; i++) {
             alert(data);
             window.location.reload();
             },
-            //Assigning result to "display" div in "search.php" file.
         error: function ( xhr ) {
             alert("error");
         }    
@@ -37,21 +32,21 @@ for (var i = 0; i < allButtons.length; i++) {
     e.preventDefault();
     const btnValue = $(this).val();
     $.ajax({
-        //AJAX type is "Post".
+        
         type: "POST",
-        //Data will be sent to "ajax.php".
+        
         url: "../modal/returnBook.php",
-        //Data, that will be sent to "ajax.php".
+        
         data: {
-            //Assigning value of "name" into "search" variable.
+           
             returnbook: btnValue
         },
-        //If result found, this funtion will be called.
+        
         success: function(data) {
             alert(data);
             window.location.reload();
             },
-            //Assigning result to "display" div in "search.php" file.
+           
         error: function ( xhr ) {
             alert("error");
         }    
@@ -78,19 +73,19 @@ $('#add-book').on('click','.add-book',function(){
         } else if (!isNaN(tcount) && tcount>0) {
 
                 $.ajax({
-                //AJAX type is "Post".
+                
                 type: "POST",
-                //Data will be sent to "ajax.php".
+                
                 url: "../modal/addBook.php",
-                //Data, that will be sent to "ajax.php".
+               
                 data: {
-                    //Assigning value of "name" into "search" variable.
+                   
                     bookId: bookId,
                     bookname: bookname,
                     authorname: authorname,
                     tcount: tcount
                 },
-                //If result found, this funtion will be called.
+                
                 success: function(data) {
                     alert(data);
                     let inputFields = document.querySelectorAll('#add-book input[type="text"]');
@@ -100,7 +95,7 @@ $('#add-book').on('click','.add-book',function(){
                         element.value = "";
                     });
                     },
-                    //Assigning result to "display" div in "search.php" file.
+                   
                 error: function ( xhr ) {
                     alert("error");
                 }    

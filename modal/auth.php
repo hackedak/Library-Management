@@ -16,19 +16,22 @@ if (isset($_POST['username'])) {
     $count = mysqli_num_rows($result);
     if ($count == 1) {
         include('bookreservecheck.php');
-        $_SESSION['username'] = $username;
-        $_SESSION['student_name'] = $row['student'];
         if ($username == '1100490') {
+            $_SESSION['admin'] = $row['student'];
             header("Location: ../views/admin.php");
-            exit;
+            exit();
         } else {
+            $_SESSION['student_name'] = $row['student'];
+            $_SESSION['username'] = $username;
             header("Location: ../views/dashboard.php");
-            exit;
+            exit();
         }
     } else {
         echo "<script>alert('Login credentials are incorrect...!')</script>";
         header("Location: http://localhost");
+        exit();
     }
 } else {
     header("Location: http://localhost");
+    exit();
 }

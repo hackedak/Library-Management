@@ -1,59 +1,58 @@
 <?php
 session_start();
-if (!$_SESSION['username']) {
+if (!$_SESSION['admin']) {
     header("Location: http://localhost");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/f71f402dff.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
-     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-     <link rel="stylesheet" href="../public/css/admin.css" type="text/css">
-     <script src="../public/js/adminControl.js"></script>
-    <title>Admin</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../public/css/admin.css" type="text/css">
+    <script src="../public/js/adminControl.js"></script>
+    <title>Issue Book</title>
 </head>
 <body id="bootstrap-overrides">
-<section>
+    <section>
 
-<div class="image-container-flex">
-    
-    <img src="../public/img/logo.png" class="logo-cusat" alt="" srcset="">
-    <a href="admin.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-</div>
+        <div class="image-container-flex">
+            <img src="../public/img/logo.png" class="logo-cusat" alt="" srcset="">
+            <a href="admin.php"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+        </div>
 
-<br/>
-    <div class="table-div">
+        <br/>
+        <div class="table-div">
             <?php
             include('../modal/dbconfig.php');
             if (isset($_GET['userId'])){
                 //to prevent from mysqli injection  
-                    $username = $_GET['userId'];  
-                    $username = stripcslashes($username);   
-                    $username = mysqli_real_escape_string($con, $username); 
-                    $sql = "select *from books_reserved  where registration_id = '$username' and return_date = '0000-00-00'";  
-                    $result = mysqli_query($con, $sql);   
-                    if(mysqli_num_rows($result) > 0){
-                        echo '<table class="table-issuebook">
-                        <thead>
-                            <tr>
-                                <th scope="col">Book</th>
-                                <th scope="col">Issue</th>
-                            </tr>
-                        </thead>
-                        <tbody>';
-                        // Fetch result rows as an associative array
-                        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $username = $_GET['userId'];  
+                $username = stripcslashes($username);   
+                $username = mysqli_real_escape_string($con, $username); 
+                $sql = "select *from books_reserved  where registration_id = '$username' and return_date = '0000-00-00'";  
+                $result = mysqli_query($con, $sql);   
+                if(mysqli_num_rows($result) > 0){
+                    echo '<table class="table-issuebook">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book</th>
+                            <th scope="col">Issue</th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+                    // Fetch result rows as an associative array
+                    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     echo "<tr>";
-                    echo "<td>". $row['book_id']."</td>".
-                        "<td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='issue-book'>Issue Book</button></td>
+                            echo "<td>". $row['book_id']."</td>".
+                            "<td><button type='submit' class='btn-issueBook' value= '".$row['book_id']."' name='issue-book'>Issue Book</button></td>
                         </tr>";
-                }
-            echo "</table> </div>";
-            $_SESSION['studentname'] = $_GET['userId'];
+                    }
+                    echo "</table> </div>";
+                    $_SESSION['studentname'] = $_GET['userId'];
             }
              else{
                 echo "<h1 style='background: rgba(255, 255, 255, 0.849);
@@ -63,6 +62,7 @@ if (!$_SESSION['username']) {
                 color: rgb(110, 92, 114); width: 200px'>No matches found</h1>";
             }
         }
+        mysqli_close($con);
             ?>
 </section>
 

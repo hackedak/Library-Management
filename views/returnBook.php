@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!$_SESSION['username']) {
+if (!$_SESSION['admin']) {
     header("Location: http://localhost");
 }
 ?>
@@ -54,7 +54,7 @@ if (!$_SESSION['username']) {
                          "<td>". $row['issue_date']."</td>".
                          "<td>". $row['return_date']."</td>";
 
-                        // 888888888888888888888888888
+                      
 
                         $currentdate = time();
                         $duedate = strtotime($row['return_date']);
@@ -68,7 +68,7 @@ if (!$_SESSION['username']) {
                             echo "<td> Rs.".($diff/2)."</td>.
                             <td><button type='submit' class='btn-returnBook' value= '".$row['book_id']."' name='return-book'>Return Book</button></td></tr>";
                         }
-                        // 8888888888888888888888888888888
+                       
                 }
             echo "</table> </div>";
             $_SESSION['studentname'] = $_GET['userId'];
