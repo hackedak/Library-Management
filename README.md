@@ -13,12 +13,12 @@
 * Database: MySQL
 
 ## Screenshots
-![Screenshot](https://github.com/hackedak/Library-Management/admin-dashboard.PNG)
-![Screenshot](https://github.com/hackedak/Library-Management/admin-dashboard-2.png)
-![Screenshot](https://github.com/hackedak/Library-Management/admin-issuebook.png)
-![Screenshot](https://github.com/hackedak/Library-Management/screenshot-user-bookDetails.png)
-![Screenshot](https://github.com/hackedak/Library-Management/screenshot-user-booksearch.png)
-![Screenshot](https://github.com/hackedak/Library-Management/screenshot-user-dashboard.png)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-dashboard.PNG)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-dashboard-2.png)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/admin-issuebook.png)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/screenshot-user-bookDetails.png)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/screenshot-user-booksearch.png)
+![Screenshot](https://github.com/hackedak/Library-Management/blob/main/screenshot-user-dashboard.png)
 
 ## Creators
 
