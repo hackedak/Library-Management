@@ -3,7 +3,7 @@
 
 var allButtons = document.querySelectorAll('.btn-issueBook');
 for (var i = 0; i < allButtons.length; i++) {
-  allButtons[i].addEventListener('click', function(e) {
+    allButtons[i].addEventListener('click', function(e) {
     e.preventDefault();
     const btnValue = $(this).val();
     $.ajax({
