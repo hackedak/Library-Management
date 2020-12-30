@@ -19,9 +19,4 @@ if (mysqli_num_rows($result_reservation) > 0) {
                                                                                 WHERE student = '$user_id_cancelled'";
         $con->multi_query($delete_reservation_update_book_count_update_studentlimit_count);
     }
-} else {
-    echo '<script>
-                        alert("No reservations found");
-                        location="views/admin.php";
-                  </script>';
 }
